@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
   <title>Solar System Explorer</title>
 </head>
 <body>
@@ -182,7 +183,7 @@
           <h1>Mars</h1>
           <p>Fourth planet from the Sun and the second smallest planet in the solar systm. Named after the Roman god of war often described as the “Red Planet”.</p>
           <label for='readMars'>
-            <a>
+            <a href="mars-future.html" class="read-more-mars">
               Read Mor
               <span>e</span>
             </a>
@@ -492,5 +493,24 @@
     <p>The moons are Charon (discovered in 1978,), Hydra and Nix (both discovered in 2005), Kerberos originally P4 (discovered 2011) and Styx originally P5 (discovered 2012) official designations S/2011 (134340) 1 and  S/2012 (134340) 1.</p>
   </div>
 </body>
+
+
+    <!-- Chatbot UI (container will be toggled by button, see chatbot.js) -->
+    <div id="chatbot-container">
+      <div>Solar Explorer Chatbot</div>
+      <div id="chat-box" style="height:180px;overflow-y:auto;padding:10px;"></div>
+      <div id="chat-suggestions" style="padding:8px 10px 0 10px;display:flex;flex-wrap:wrap;gap:8px;">
+        <button class="chat-suggestion" type="button">What is the solar system?</button>
+        <button class="chat-suggestion" type="button">How do I book a ticket?</button>
+        <button class="chat-suggestion" type="button">Tell me about Mars</button>
+        <button class="chat-suggestion" type="button">How will humans live on Mars?</button>
+        <button class="chat-suggestion" type="button">Show travel cost to Jupiter</button>
+      </div>
+      <form id="chat-form" style="display:flex;">
+        <input id="chat-input" type="text" placeholder="Ask about planets, future life, or booking...">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script src="chatbot.js"></script>
 
 </html>
