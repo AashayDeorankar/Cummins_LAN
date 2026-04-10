@@ -129,6 +129,33 @@ body .logo span {
   color: #f39041;
   display: block;
 }
+body .future_nav {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 15;
+}
+body .future_nav a {
+  text-decoration: none;
+  color: #ffe7dc;
+  border: 1px solid rgba(255, 191, 169, 0.7);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(29, 15, 11, 0.55);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+body .future_nav a:hover {
+  transform: translateY(-1px);
+  background: rgba(229, 95, 69, 0.35);
+}
 body label {
   cursor: pointer;
 }
@@ -1908,7 +1935,7 @@ body .solar_systm .planet.jupiter .lo {
   left: 100px;
   top: -100px;
   transform: scale(0.4);
-  background: url("http://stevealbers.net/albers/sos/jupiter/io/io_rgb_cyl.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -1916,7 +1943,7 @@ body .solar_systm .planet.jupiter .europa {
   left: 400px;
   top: -210px;
   transform: scale(0.45);
-  background: url("http://i.imgur.com/ZZBiHOH.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/5/54/Europa-moon.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -1924,7 +1951,7 @@ body .solar_systm .planet.jupiter .ganymede {
   left: 900px;
   top: -70px;
   transform: scale(0.4);
-  background: url("https://vignette.wikia.nocookie.net/planet-texture-maps/images/1/14/Ganymede.jpg/revision/latest?cb=20180104001948");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/2/21/Ganymede_g1_true-edit1.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -1973,7 +2000,7 @@ body .solar_systm .planet.saturn .enceladus {
   left: 900px;
   top: -70px;
   transform: scale(0.4);
-  background: url("https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA0NC8yMzkvb3JpZ2luYWwvZW5jZWxhZHVzLW1hcC1jYXNzaW5pLmpwZw==");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/83/PIA17202_-_Approaching_Enceladus.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -2006,7 +2033,7 @@ body .solar_systm .planet.uranus .miranda {
   left: 100px;
   top: -100px;
   transform: scale(0.4);
-  background: url("http://celestia.simulatorlabbs.com/CelSL/textures/medres/miranda.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/d/d0/Miranda_-_Uranus_moon_-_Voyager_2.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -2014,7 +2041,7 @@ body .solar_systm .planet.uranus .ariel {
   left: 400px;
   top: -210px;
   transform: scale(0.45);
-  background: url("http://celestia.freedoors.org/Celestia-Doors/textures/medres/ariel.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/f/f7/Ariel_moon.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -2022,7 +2049,7 @@ body .solar_systm .planet.uranus .umbriel {
   left: 900px;
   top: -70px;
   transform: scale(0.4);
-  background: url("http://celestia.freedoors.org/Celestia-Doors/textures/medres/titania.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/4/43/Umbriel_-_Voyager_2.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -2063,7 +2090,7 @@ body .solar_systm .planet.neptune .proteus {
   left: 400px;
   top: -210px;
   transform: scale(0.45);
-  background: url("http://2.bp.blogspot.com/-NrsDNbSk8TU/VKmLHdOgw0I/AAAAAAAAHvY/dod1Kqv2Ta8/s1600/NereidTxt2.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/81/Proteus_moon.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -2071,7 +2098,7 @@ body .solar_systm .planet.neptune .nereid {
   left: 900px;
   top: -70px;
   transform: scale(0.4);
-  background: url("http://4.bp.blo.gspot.com/-3eyaVs4az74/VKmMpLo6FYI/AAAAAAAAHvs/zK5NTllQYnk/s1600/NereidTxt.jpg");
+  background: url("https://upload.wikimedia.org/wikipedia/commons/0/0e/Nereid_%28moon%29.jpg");
   z-index: -1;
   box-shadow: 0px -30px 30px 10px black inset;
 }
@@ -2265,4 +2292,128 @@ body .panel p {
   color: #a0a0a0;
   font-size: 12px;
   line-height: 20px;
+}
+
+body .solar_systm .planet.earth .moon {
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+}
+
+body #mars:checked ~ .solar .solar_systm:nth-of-type(4) .planet_description .mars_future {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(18px);
+  transition: all 0.55s ease;
+}
+
+body.mars-zoom #mars:checked ~ .solar .solar_systm:nth-of-type(4) .planet {
+  transform: translateZ(-5400px) translateY(-80px) rotatex(2.5deg) scaleX(0.93) scale(1.17) !important;
+  box-shadow: 0 -590px 150px black inset, 0 0px 170px 60px rgba(232, 99, 99, 0.85) inset, 0 0px 36px 9px rgba(232, 99, 99, 0.8) inset, 0 -10px 190px rgba(107, 38, 26, 0.95) !important;
+}
+
+body.mars-zoom #mars:checked ~ .solar .solar_systm:nth-of-type(4) .planet .trajectory {
+  opacity: 0.5 !important;
+}
+
+body.mars-zoom #mars:checked ~ .solar .solar_systm:nth-of-type(4) .planet_description .mars_future {
+  max-height: 440px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 20px;
+}
+
+body .solar_systm .planet_description .mars_future h3 {
+  margin: 0 0 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #ffd7cc;
+}
+
+body .solar_systm .planet_description .mars_future .future_grid {
+  display: grid;
+  gap: 10px;
+}
+
+body .solar_systm .planet_description .mars_future article {
+  background: rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(255, 173, 145, 0.5);
+  border-radius: 10px;
+  padding: 10px 12px;
+  backdrop-filter: blur(2px);
+}
+
+body .solar_systm .planet_description .mars_future article h4 {
+  margin: 0 0 6px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 10px;
+  color: #ffc2b3;
+  text-transform: uppercase;
+}
+
+body .solar_systm .planet_description .mars_future article p {
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 16px;
+  font-size: 9px;
+  color: #ffe8df;
+  text-transform: none;
+}
+
+body.moon-zoom #earth:checked ~ .solar .solar_systm:nth-of-type(3) .planet {
+  transform: translateZ(-3900px) translateY(-40px) rotatex(3.2deg) scaleX(0.91) scale(1.08) !important;
+}
+
+body.moon-zoom #earth:checked ~ .solar .solar_systm:nth-of-type(3) .planet .moon {
+  transform: translate3d(180px, -210px, 380px) scale(0.86) !important;
+  box-shadow: 0px -28px 30px 12px black inset, 0 0 26px rgba(204, 246, 255, 0.86);
+}
+
+body.moon-zoom-deep #earth:checked ~ .solar .solar_systm:nth-of-type(3) .planet {
+  transform: translateZ(-3300px) translateY(-60px) rotatex(2.8deg) scaleX(0.93) scale(1.16) !important;
+}
+
+body.moon-zoom-deep #earth:checked ~ .solar .solar_systm:nth-of-type(3) .planet .moon {
+  transform: translate3d(130px, -280px, 700px) scale(1.26) !important;
+  box-shadow: 0px -25px 28px 9px black inset, 0 0 54px rgba(188, 243, 255, 0.95), 0 0 80px rgba(153, 221, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+  body.mars-zoom #mars:checked ~ .solar .solar_systm:nth-of-type(4) .planet {
+    transform: translateZ(-5600px) translateY(-40px) rotatex(2.4deg) scaleX(0.95) scale(1.08) !important;
+  }
+
+  body.moon-zoom #earth:checked ~ .solar .solar_systm:nth-of-type(3) .planet .moon {
+    transform: translate3d(90px, -160px, 300px) scale(0.72) !important;
+  }
+
+  body.moon-zoom-deep #earth:checked ~ .solar .solar_systm:nth-of-type(3) .planet .moon {
+    transform: translate3d(60px, -210px, 520px) scale(0.98) !important;
+  }
+}
+
+body .solar_systm .planet.mars#marsPlanet {
+  cursor: pointer;
+}
+
+body .solar_systm .planet_description .mars_future .future_link {
+  display: inline-block;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 187, 170, 0.75);
+  padding: 7px 12px;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffd7cc;
+  text-decoration: none;
+  font-size: 10px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+body .solar_systm .planet_description .mars_future .future_link:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 143, 116, 0.18);
 }

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# Cummins_LAN
+=======
 # Solar_Explorer
 🌌 Solar System Explorer – Built with Just HTML &amp; CSS 🪐🌞✨ This project is a visually animated model of the Solar System, where planets orbit around the sun — entirely created using HTML and CSS only.
 
@@ -43,3 +46,4 @@ Make it more mobile friendly
 
 License:
 This project is open-source and free to use for educational or learning purposes.
+>>>>>>> df7f960 (Initial commit)
