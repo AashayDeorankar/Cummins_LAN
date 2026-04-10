@@ -187,6 +187,110 @@ body {
   display: block;
 }
 
+.booking-card p {
+  margin-bottom: 12px;
+}
+
+.booking-form {
+  margin-top: 8px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.booking-field {
+  display: grid;
+  gap: 6px;
+}
+
+.booking-full {
+  grid-column: 1 / -1;
+}
+
+.booking-field label {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #f1e6de;
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: rgba(8, 10, 14, 0.65);
+  color: #f7f6f2;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.booking-field textarea {
+  resize: vertical;
+}
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+  outline: none;
+  border-color: rgba(255, 181, 154, 0.85);
+  box-shadow: 0 0 0 2px rgba(255, 124, 88, 0.2);
+}
+
+.booking-summary {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(17, 10, 10, 0.5);
+}
+
+.booking-summary p {
+  margin: 0;
+}
+
+.booking-summary p + p {
+  margin-top: 6px;
+}
+
+.booking-actions {
+  margin-top: 12px;
+}
+
+.booking-actions button {
+  border: 1px solid rgba(255, 207, 190, 0.8);
+  background: linear-gradient(120deg, #9f3a28, #c25941);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.booking-actions button:hover {
+  filter: brightness(1.08);
+}
+
+.booking-message {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.booking-message.success {
+  color: #b9ffcf;
+}
+
+.booking-message.error {
+  color: #ffd1cc;
+}
+
 .footer-note {
   position: relative;
   z-index: 2;
@@ -200,6 +304,10 @@ body {
   .span-6,
   .span-8 {
     grid-column: span 12;
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero p {

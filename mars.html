@@ -56,6 +56,60 @@
         <p>Dust storms and delayed communication demand self-reliant systems. Future Mars cities must run critical utilities for weeks without direct Earth support.</p>
       </article>
 
+      <article class="card span-12 booking-card">
+        <h2>Spaceship Booking System</h2>
+        <p>Reserve your seat on the next Mars transfer mission. Pick your cabin class, seats, and departure date to get an instant fare estimate.</p>
+
+        <form id="shipBookingForm" class="booking-form" novalidate>
+          <div class="booking-grid">
+            <div class="booking-field">
+              <label for="travelerName">Passenger Name</label>
+              <input id="travelerName" name="travelerName" type="text" placeholder="Astra Nova" required>
+            </div>
+
+            <div class="booking-field">
+              <label for="travelerEmail">Email</label>
+              <input id="travelerEmail" name="travelerEmail" type="email" placeholder="you@missionmail.space" required>
+            </div>
+
+            <div class="booking-field">
+              <label for="departureDate">Departure Date</label>
+              <input id="departureDate" name="departureDate" type="date" required>
+            </div>
+
+            <div class="booking-field">
+              <label for="cabinClass">Cabin Class</label>
+              <select id="cabinClass" name="cabinClass" required>
+                <option value="explorer">Explorer Pod</option>
+                <option value="pioneer">Pioneer Cabin</option>
+                <option value="commander">Commander Suite</option>
+              </select>
+            </div>
+
+            <div class="booking-field">
+              <label for="seatCount">Seats</label>
+              <input id="seatCount" name="seatCount" type="number" min="1" max="6" value="1" required>
+            </div>
+
+            <div class="booking-field booking-full">
+              <label for="specialReq">Special Requirements (optional)</label>
+              <textarea id="specialReq" name="specialReq" rows="3" placeholder="Dietary notes, medical support, cargo details..."></textarea>
+            </div>
+          </div>
+
+          <div class="booking-summary" id="bookingSummary">
+            <p><strong>Route:</strong> Earth Orbital Gate -> Mars Habitat One</p>
+            <p><strong>Estimated Total:</strong> <span id="estimatedPrice">$120,000</span></p>
+          </div>
+
+          <div class="booking-actions">
+            <button type="submit">Confirm Booking</button>
+          </div>
+
+          <p id="bookingMessage" class="booking-message" aria-live="polite"></p>
+        </form>
+      </article>
+
       <article class="card span-12">
         <h2>Immersive Visual</h2>
         <p>Use this video section in your hackathon demo. Replace with your own cinematic Mars concept film anytime.</p>
@@ -67,5 +121,76 @@
 
     <p class="footer-note">Tip: replace the iframe URL with your own rendered video to make your submission unique.</p>
   </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("shipBookingForm");
+      if (!form) {
+        return;
+      }
+
+      var departureDate = document.getElementById("departureDate");
+      var cabinClass = document.getElementById("cabinClass");
+      var seatCount = document.getElementById("seatCount");
+      var estimatedPrice = document.getElementById("estimatedPrice");
+      var bookingMessage = document.getElementById("bookingMessage");
+      var travelerName = document.getElementById("travelerName");
+
+      var baseFare = 120000;
+      var classMultiplier = {
+        explorer: 1,
+        pioneer: 1.35,
+        commander: 1.9
+      };
+
+      var today = new Date();
+      var yyyy = today.getFullYear();
+      var mm = String(today.getMonth() + 1).padStart(2, "0");
+      var dd = String(today.getDate()).padStart(2, "0");
+      departureDate.min = yyyy + "-" + mm + "-" + dd;
+
+      function formatUSD(value) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 0
+        }).format(value);
+      }
+
+      function currentTotal() {
+        var seats = Math.max(1, parseInt(seatCount.value || "1", 10));
+        var selectedClass = cabinClass.value;
+        var multiplier = classMultiplier[selectedClass] || 1;
+        return Math.round(baseFare * seats * multiplier);
+      }
+
+      function updateEstimate() {
+        estimatedPrice.textContent = formatUSD(currentTotal());
+      }
+
+      cabinClass.addEventListener("change", updateEstimate);
+      seatCount.addEventListener("input", updateEstimate);
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          bookingMessage.textContent = "Please fill all required booking fields correctly.";
+          bookingMessage.className = "booking-message error";
+          form.reportValidity();
+          return;
+        }
+
+        var ref = "MARS-" + Date.now().toString().slice(-6);
+        bookingMessage.textContent =
+          "Booking confirmed for " + travelerName.value.trim() +
+          ". Reference: " + ref +
+          ". Total fare: " + formatUSD(currentTotal()) + ".";
+        bookingMessage.className = "booking-message success";
+      });
+
+      updateEstimate();
+    })();
+  </script>
 </body>
 </html>
